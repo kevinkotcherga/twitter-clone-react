@@ -1,7 +1,7 @@
 import { doc, updateDoc } from 'firebase/firestore';
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTweet } from '../../features/tweet.slice';
+import { addComment, addTweet } from '../../features/tweet.slice';
 import { db } from '../../utils/firebase.config';
 import CommentCard from '../commentCard/CommentCard';
 
@@ -44,7 +44,7 @@ const CommentTweet = ({ tweet, user }) => {
       // addComment ne prend en compte qu'un élément
       // C'est donc stocké dans un tableau
       // On pourra chosir dedans avec [0], [1], etc..
-      dispatch(addTweet([tweet.id, data]))
+      dispatch(addComment([tweet.id, data]))
       // dispatch envera l'id du post à éditer et la data du message (commentaire) à envoyer
       answerContent.current.value = '';
     });

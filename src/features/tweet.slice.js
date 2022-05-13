@@ -34,18 +34,18 @@ export const tweetSlice = createSlice({
 		// CREATE COMMENTS
 		addComment: (state, { payload }) => {
 			// chaque élement est appelé individuellement dans le map (post)
-			state.tweets = state.tweets.map(post => {
+			state.tweets = state.tweets.map(tweet => {
 				// il faut trouver dans quel post placer le commentaire
 				// si l'id du post est egal à l'id envoyé dans le payload alors le commentaire lui sera ajouté
-				if (post.id === payload[0]) {
+				if (tweet.id === payload[0]) {
 					// il faura donc retourné toute la base de donnée
 					return {
-						...post,
+						...tweet,
 						// et sera ajouté le payload 1, qui est la data envoyé avec le dispatch
 						comments: payload[1],
 					};
 				} else {
-					return post;
+					return tweet;
 				}
 			});
 		},
