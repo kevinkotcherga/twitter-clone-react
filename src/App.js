@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { collection, getDocs } from 'firebase/firestore';
 import { getTweets } from './features/tweet.slice';
 import { db } from './utils/firebase.config';
+import Profil from './pages/profil/Profil';
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -49,6 +50,7 @@ function App() {
 					element={user ? <Home user={user} tweets={tweets} /> : <Login />}
 				/>
 				<Route path="/tweets/:id" element={<TweetId />}></Route>
+				<Route path="/users/:id" element={<Profil />}></Route>
 			</Routes>
 		</div>
 	);

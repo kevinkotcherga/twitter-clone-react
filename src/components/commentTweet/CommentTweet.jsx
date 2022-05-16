@@ -2,7 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addComment, getComments } from '../../features/tweet.slice';
+import { addComment } from '../../features/tweet.slice';
 import { auth, db } from '../../utils/firebase.config';
 import CommentCard from '../commentCard/CommentCard';
 
@@ -61,7 +61,7 @@ const CommentTweet = ({ tweet }) => {
   return (
     <div>
       {/* && veux dire est-ce que c'est true, si oui affiche la suite */}
-      {tweet.comments.map((comment, index) => (
+      {tweet.comments && tweet.comments.map((comment, index) => (
         <CommentCard comment={comment} key={index}/>
       ))}
       {/* Si l'utilisateur est connecté alors il peut poster un commentaire

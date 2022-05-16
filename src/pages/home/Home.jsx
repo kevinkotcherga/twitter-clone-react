@@ -3,6 +3,7 @@ import React from 'react';
 import { auth } from '../../utils/firebase.config';
 import CreateTweet from '../../components/createTweet/CreateTweet';
 import Tweets from '../../components/tweets/Tweets';
+import './home.scss'
 
 const Home = ({ user, tweets }) => {
   // handleLogout est appelé au clique du button
@@ -14,11 +15,20 @@ const Home = ({ user, tweets }) => {
 
   return (
     <div className='home'>
-      <h1>Hello @{user?.displayName}</h1>
-      <button onClick={() => handleLogout()}>Deconnexion</button>
-      <CreateTweet uid={user.uid} displayName={user.displayName} />
-      <Tweets user={user} tweets={tweets} />
-
+      <div className="nav">
+        <span>nav</span>
+        <button onClick={() => handleLogout()}>Deconnexion</button>
+      </div>
+      <div className="center">
+        <div className="centerContainer">
+          <h1>Hello @{user?.displayName}</h1>
+          <CreateTweet uid={user.uid} displayName={user.displayName} />
+          <Tweets user={user} tweets={tweets} />
+        </div>
+      </div>
+    <div className="right">
+      <span>right</span>
+    </div>
     </div>
   );
 };
