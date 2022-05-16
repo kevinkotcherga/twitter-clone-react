@@ -21,7 +21,6 @@ const Login = () => {
         // email pour récupérer le mot de passe
         loginPassword.current.value
       );
-      console.log(user);
     // si try ne fonctionne pas, catch est effectué
     } catch(error) {
       console.log(error.message);

@@ -5,7 +5,6 @@ import { db } from '../../utils/firebase.config';
 import { addTweet, getTweets } from '../../features/tweet.slice';
 
 const CreateTweet = ({ uid, displayName }) => {
-  console.log(uid, displayName)
   const message = useRef();
   // useDispatch déclenche l'action, la logique du reducer
   const dispatch = useDispatch();

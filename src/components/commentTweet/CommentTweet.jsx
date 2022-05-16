@@ -1,13 +1,22 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import { doc, updateDoc } from 'firebase/firestore';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addComment, addTweet } from '../../features/tweet.slice';
-import { db } from '../../utils/firebase.config';
+import { addComment } from '../../features/tweet.slice';
+import { auth, db } from '../../utils/firebase.config';
 import CommentCard from '../commentCard/CommentCard';
 
-const CommentTweet = ({ tweet, user }) => {
+const CommentTweet = ({ tweet }) => {
+  const [user, setUser] = useState(null);
   const answerContent = useRef();
   const dispatch = useDispatch();
+  	// onAuthStateChanged est une méthode de firebase qui surveille chaque changement d'authentification
+	// onAuthStateChanged regarde dans auth si un utilisateur est présent
+	onAuthStateChanged(auth, currentUser => {
+		// currentUser est passé dans setUser et peut-être utilisé dans l'application
+		// user aura les données de
+		setUser(currentUser);
+	});
 
   const handleComment = (e) => {
     e.preventDefault();
@@ -51,7 +60,6 @@ const CommentTweet = ({ tweet, user }) => {
   };
   return (
     <div>
-      <h5>Commentaires</h5>
       {/* && veux dire est-ce que c'est true, si oui affiche la suite */}
       {tweet.comments && tweet.comments.map((comment, index) => (
         <CommentCard comment={comment} key={index}/>
