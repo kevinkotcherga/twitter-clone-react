@@ -7,7 +7,7 @@ const Tweet = ({ tweet, user}) => {
     <div>
       <h2>@{tweet.author}</h2>
       <p>{tweet.message}</p>
-      <Link to={`/tweet/${tweet.id}`} state={{tweet: tweet}}>Voir les commentaires ({tweet.comments ? (tweet.comments.length) : "0"})</Link>
+      <Link to={`/tweets/${tweet.id}`} state={{tweet: tweet}}>Voir les commentaires ({tweet.comments ? (tweet.comments.length) : "0"})</Link>
     </div>
   );
 };

@@ -30,6 +30,14 @@ export const tweetSlice = createSlice({
 			// Le state est filtré et est gardé dans le state tous les élements qui ne sont pas dans le payload
 			state.tweets = state.tweets.filter(element => element.id !== payload);
 		},
+		// GET
+
+		// Quand l'action est appelée, le state est récupéré (la data, au début de base nul)
+		// action.payload = { payload } sont les données que l'on récupère en paramètre
+		// le payload est tout le paramètre qui est donné dans App.js : (dispatch(getPosts(res.docs.map(doc => ({ ...doc.data(), id: doc.id }))))
+		getComments: (state, { payload }) => {
+			state.tweets.comments = payload;
+		},
 
 		// CREATE COMMENTS
 		addComment: (state, { payload }) => {
@@ -53,5 +61,6 @@ export const tweetSlice = createSlice({
 });
 
 // EXPORT DES SLICES
-export const { getTweets, addTweet, deleteTweet, addComment } = tweetSlice.actions;
+export const { getTweets, addTweet, deleteTweet, addComment, getComments } =
+	tweetSlice.actions;
 export default tweetSlice.reducer;

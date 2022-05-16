@@ -4,7 +4,7 @@ import Login from './components/login/Login';
 import SignUp from './components/signUp/SignUp';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './utils/firebase.config';
-import Home from './components/home/Home';
+import Home from './pages/home/Home'
 import TweetId from './components/tweetId/TweetId';
 import { useDispatch, useSelector } from 'react-redux';
 import { collection, getDocs } from 'firebase/firestore';
@@ -48,7 +48,7 @@ function App() {
 					path="/login"
 					element={user ? <Home user={user} tweets={tweets} /> : <Login />}
 				/>
-				<Route path="/tweet/:id" element={<TweetId />}></Route>
+				<Route path="/tweets/:id" element={<TweetId />}></Route>
 			</Routes>
 		</div>
 	);

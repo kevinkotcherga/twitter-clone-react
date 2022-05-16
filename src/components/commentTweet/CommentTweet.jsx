@@ -1,8 +1,8 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import { doc, updateDoc } from 'firebase/firestore';
+import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addComment } from '../../features/tweet.slice';
+import { addComment, getComments } from '../../features/tweet.slice';
 import { auth, db } from '../../utils/firebase.config';
 import CommentCard from '../commentCard/CommentCard';
 
@@ -53,7 +53,7 @@ const CommentTweet = ({ tweet }) => {
       // addComment ne prend en compte qu'un élément
       // C'est donc stocké dans un tableau
       // On pourra chosir dedans avec [0], [1], etc..
-      dispatch(addComment([tweet.id, data]))
+      dispatch(addComment([tweet.id, data]));
       // dispatch envera l'id du post à éditer et la data du message (commentaire) à envoyer
       answerContent.current.value = '';
     });
@@ -61,7 +61,7 @@ const CommentTweet = ({ tweet }) => {
   return (
     <div>
       {/* && veux dire est-ce que c'est true, si oui affiche la suite */}
-      {tweet.comments && tweet.comments.map((comment, index) => (
+      {tweet.comments.map((comment, index) => (
         <CommentCard comment={comment} key={index}/>
       ))}
       {/* Si l'utilisateur est connecté alors il peut poster un commentaire
