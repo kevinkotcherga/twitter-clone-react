@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -7,6 +7,12 @@ import { auth, db } from '../../utils/firebase.config';
 import CommentCard from '../commentCard/CommentCard';
 
 const CommentTweet = ({ tweet }) => {
+  // handleLogout est appelé au clique du button
+	const handleLogout = async () => {
+		// SignOut est une méthode de firebase qui permet la déconnexion
+		// C'est auth qui sera signOut
+		await signOut(auth);
+	};
   const [user, setUser] = useState(null);
   const answerContent = useRef();
   const dispatch = useDispatch();
@@ -58,19 +64,32 @@ const CommentTweet = ({ tweet }) => {
       answerContent.current.value = '';
     });
   };
-  return (
-    <div>
-      {/* && veux dire est-ce que c'est true, si oui affiche la suite */}
-      {tweet.comments && tweet.comments.map((comment, index) => (
-        <CommentCard comment={comment} key={index}/>
-      ))}
-      {/* Si l'utilisateur est connecté alors il peut poster un commentaire
-      sinon un message s'affichera */}
-        <form onSubmit={(e) => handleComment(e)}>
-          <textarea placeholder='Envoyer un commentaire' ref={answerContent}></textarea>
-          <input type="submit" value="Envoyer" />
-        </form>
+
+
+    return (
+    <div className='home'>
+      <div className="nav">
+        <span>nav</span>
+        <button onClick={() => handleLogout()}>Deconnexion</button>
+      </div>
+      <div className="center">
+        <div className="centerContainer">
+            {/* && veux dire est-ce que c'est true, si oui affiche la suite */}
+        {tweet.comments && tweet.comments.map((comment, index) => (
+          <CommentCard comment={comment} key={index}/>
+        ))}
+        {/* Si l'utilisateur est connecté alors il peut poster un commentaire
+        sinon un message s'affichera */}
+          <form onSubmit={(e) => handleComment(e)}>
+            <textarea placeholder='Envoyer un commentaire' ref={answerContent}></textarea>
+            <input type="submit" value="Envoyer" />
+          </form>
+        </div>
+      </div>
+    <div className="right">
+      <span>right</span>
     </div>
+  </div>
   );
 };
 
