@@ -21,19 +21,21 @@ const Navbar = ({ user }) => {
 	};
   return (
     <div className='navbar'>
-      <ImTwitter color='#1F9EF7'/>
-        <ul>
-          <li><RiHome7Fill />Accueil</li>
-          <li><FaHashtag />Explorer</li>
-          <li><IoNotificationsOutline />Notifications</li>
-          <li><FaRegEnvelope />Messages</li>
-          <li><AiOutlineInbox />Signets</li>
-          <li><BsCardList />Listes</li>
-          <Link to="users/:id"><li><CgProfile />Profil</li></Link>
-          <li><MdOutlineSettingsEthernet />Plus</li>
-        </ul>
-        <button className='buttonTweeter'>Tweeter</button>
-        <button onClick={() => handleLogout()}>Deconnexion</button>
+      <div className='container'>
+        <ImTwitter color='#1F9EF7'/>
+          <ul>
+            <li><RiHome7Fill />Accueil</li>
+            <li><FaHashtag />Explorer</li>
+            <li><IoNotificationsOutline />Notifications</li>
+            <li><FaRegEnvelope />Messages</li>
+            <li><AiOutlineInbox />Signets</li>
+            <li><BsCardList />Listes</li>
+            <Link to="users/:id"><li><CgProfile />Profil</li></Link>
+            <li><MdOutlineSettingsEthernet />Plus</li>
+          </ul>
+          <button className='buttonTweeter'>Tweeter</button>
+          <button onClick={() => handleLogout()}>Deconnexion</button>
+        </div>
     </div>
   );
 };
