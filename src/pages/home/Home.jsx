@@ -4,20 +4,14 @@ import { auth } from '../../utils/firebase.config';
 import CreateTweet from '../../components/createTweet/CreateTweet';
 import Tweets from '../../components/tweets/Tweets';
 import './home.scss'
+import Navbar from '../../components/navbar/Navbar';
+import Widgets from '../../components/widgets/Widgets';
 
 const Home = ({ user, tweets }) => {
-  // handleLogout est appelé au clique du button
-	const handleLogout = async () => {
-		// SignOut est une méthode de firebase qui permet la déconnexion
-		// C'est auth qui sera signOut
-		await signOut(auth);
-	};
-
   return (
     <div className='home'>
       <div className="nav">
-        <span>nav</span>
-        <button onClick={() => handleLogout()}>Deconnexion</button>
+        <Navbar user={user}/>
       </div>
       <div className="center">
         <div className="centerContainer">
@@ -27,7 +21,7 @@ const Home = ({ user, tweets }) => {
         </div>
       </div>
     <div className="right">
-      <span>right</span>
+      <Widgets />
     </div>
     </div>
   );

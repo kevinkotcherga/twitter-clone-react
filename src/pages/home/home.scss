@@ -1,13 +1,13 @@
 .home {
   display: flex;
+  padding: 0 400px;
 
   .nav {
-    width: 100px;
+    flex: 1;
   }
   .center {
     flex:2;
     .centerContainer {
-      width: 20vw;
       margin: auto;
       border-left: solid 0.5px #e6e6e6;
       border-right: solid 0.5px #e6e6e6;
