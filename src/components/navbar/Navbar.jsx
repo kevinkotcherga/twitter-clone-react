@@ -24,14 +24,14 @@ const Navbar = ({ user }) => {
       <div className='container'>
         <ImTwitter color='#1F9EF7' size={'25px'}/>
           <ul>
-            <li><span><RiHome7Fill size={'25px'}/></span>Accueil</li>
-            <li><span><FaHashtag size={'25px'}/></span>Explorer</li>
-            <li><span><MdOutlineNotificationsNone size={'25px'}/></span>Notifications</li>
-            <li><span><FaRegEnvelope size={'25px'}/></span>Messages</li>
-            <li><span><AiOutlineInbox size={'25px'}/></span>Signets</li>
-            <li><span><BsCardList size={'25px'}/></span>Listes</li>
-            <Link to="users/:id"><li><span><CgProfile size={'25px'}/></span>Profil</li></Link>
-            <li><span><FiSettings size={'25px'}/></span>Plus</li>
+            <li><span><RiHome7Fill size={'25px'}/>Accueil</span></li>
+            <li><span><FaHashtag size={'25px'}/>Explorer</span></li>
+            <li><span><MdOutlineNotificationsNone size={'25px'}/>Notifications</span></li>
+            <li><span><FaRegEnvelope size={'25px'}/>Messages</span></li>
+            <li><span><AiOutlineInbox size={'25px'}/>Signets</span></li>
+            <li><span><BsCardList size={'25px'}/>Listes</span></li>
+            <Link to="users/:id"><li><span><CgProfile size={'25px'}/>Profil</span></li></Link>
+            <li><span><FiSettings size={'25px'}/>Plus</span></li>
           </ul>
           <button className='buttonTweeter'>Tweeter</button>
           <button onClick={() => handleLogout()}>Deconnexion</button>

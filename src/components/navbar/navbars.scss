@@ -14,13 +14,19 @@
         li {
           cursor: pointer;
           color: #0F1419;
-          margin: 20px 0;
+          margin: 10px 0;
           font-size: 1.3rem;
           font-weight: 600;
           height: 50px;
           border-radius: 20px;
+          position: relative;
           span{
             margin-right: 20px;
+            position: absolute;
+              top: 50%;
+              /* poussé de la moitié de hauteur du référent */
+              transform: translateY(-50%);
+              /* tiré de la moitié de sa propre hauteur */
           }
         }
         li:hover {
