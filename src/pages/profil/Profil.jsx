@@ -1,17 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { auth } from '../../utils/firebase.config';
 
 const Profil = () => {
-  // Récupération du props 'tweet' depuis Tweet.jsx
-  const location = useLocation();
-  const { tweet } = location.state;
-  const { user } = location.state;
-  // const { user } = location.state;
-  console.log(tweet);
-  console.log(user);
+  // handleLogout est appelé au clique du button
+	const handleLogout = async () => {
+	// SignOut est une méthode de firebase qui permet la déconnexion
+	// C'est auth qui sera signOut
+	await signOut(auth);
+	};
+
   return (
     <div>
-      <h1>@{tweet.author}</h1>
+      <h1>Profil</h1>
+      <button onClick={() => handleLogout()}>Deconnexion</button>
     </div>
   );
 };

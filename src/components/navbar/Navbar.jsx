@@ -13,12 +13,6 @@ import { FiSettings } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ user }) => {
-  // handleLogout est appelé au clique du button
-	const handleLogout = async () => {
-	// SignOut est une méthode de firebase qui permet la déconnexion
-	// C'est auth qui sera signOut
-	await signOut(auth);
-	};
   return (
     <div className='navbar'>
       <div className='container'>
@@ -30,11 +24,10 @@ const Navbar = ({ user }) => {
             <li><span><FaRegEnvelope size={'25px'}/>Messages</span></li>
             <li><span><AiOutlineInbox size={'25px'}/>Signets</span></li>
             <li><span><BsCardList size={'25px'}/>Listes</span></li>
-            <Link to="users/:id"><li><span><CgProfile size={'25px'}/>Profil</span></li></Link>
+            <Link to="/profil"><li><span><CgProfile size={'25px'}/>Profil</span></li></Link>
             <li><span><FiSettings size={'25px'}/>Plus</span></li>
           </ul>
           <button className='buttonTweeter'>Tweeter</button>
-          <button onClick={() => handleLogout()}>Deconnexion</button>
         </div>
     </div>
   );

@@ -19,10 +19,10 @@ const Tweet = ({ tweet, user}) => {
         </Link>
         <p>{tweet.message}</p>
         <div className="icons">
-          <Link to={`/tweets/${tweet.id}`} state={{tweet: tweet}}><FaRegComment />{tweet.comments ? (tweet.comments.length) : "0"}</Link>
-          <AiOutlineRetweet />
-          <AiOutlineHeart />
-          <IoShareOutline />
+          <Link to={`/tweets/${tweet.id}`} state={{tweet: tweet}}><FaRegComment style={{ marginRight:'5px'}}/>{tweet.comments ? (tweet.comments.length) : "0"}</Link>
+          <Link to={`/tweets/${tweet.id}`}><AiOutlineRetweet style={{ cursor:'pointer', marginRight:'5px'}} />2</Link>
+          <Link to={`/tweets/${tweet.id}`}><AiOutlineHeart style={{ cursor:'pointer', marginRight:'5px'}}/>3</Link>
+          <Link to={`/tweets/${tweet.id}`}><IoShareOutline style={{ cursor:'pointer', marginRight:'5px'}}/>1</Link>
         </div>
       </div>
     </div>

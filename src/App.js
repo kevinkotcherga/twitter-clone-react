@@ -50,7 +50,7 @@ function App() {
 					element={user ? <Home user={user} tweets={tweets} /> : <Login />}
 				/>
 				<Route path="/tweets/:id" element={<TweetId />}></Route>
-				<Route path="/users/:id" element={<Profil />}></Route>
+				<Route path="/profil" element={<Profil />}></Route>
 			</Routes>
 		</div>
 	);
