@@ -2,6 +2,7 @@
   .container {
     margin: auto;
     width: 200px;
+    padding: 15px 0;
     a {
         text-decoration: none;
       }
@@ -22,11 +23,12 @@
           position: relative;
           span{
             margin-right: 20px;
+            margin-left: 10px;
             position: absolute;
-              top: 50%;
-              /* poussé de la moitié de hauteur du référent */
-              transform: translateY(-50%);
-              /* tiré de la moitié de sa propre hauteur */
+            top: 50%;
+            /* poussé de la moitié de hauteur du référent */
+            transform: translateY(-50%);
+            /* tiré de la moitié de sa propre hauteur */
           }
         }
         li:hover {

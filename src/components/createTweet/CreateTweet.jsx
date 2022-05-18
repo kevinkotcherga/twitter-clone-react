@@ -41,11 +41,16 @@ const CreateTweet = ({ uid, displayName }) => {
 
   return (
     <div className='createTweet'>
-      <p>Accueil</p>
-        <form onSubmit={(e) => handleTweet(e)}>
-          <textarea placeholder='Quoi de neuf ?' ref={message}></textarea>
-          <input type="submit" value='Tweeter'/>
-        </form>
+      <span>Accueil</span>
+        <div className='containerForm'>
+          <form onSubmit={(e) => handleTweet(e)}>
+            <div className='containerText'>
+              <img src="https://thispersondoesnotexist.com/image" alt="" />
+              <textarea placeholder='Quoi de neuf ?' ref={message}></textarea>
+            </div>
+            <input type="submit" value='Tweeter'/>
+          </form>
+        </div>
     </div>
   );
 };

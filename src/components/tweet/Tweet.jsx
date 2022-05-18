@@ -10,7 +10,10 @@ const Tweet = ({ tweet, user}) => {
     <div className='tweet'>
         <div>
         <Link to={`/users/${tweet.authorId}`} state={{tweet: tweet}}>
-          <h2>@{tweet.author}</h2>
+          <div className='tweetHeader'>
+            <span>hey</span>
+            <h2>@{tweet.author}</h2>
+          </div>
           </Link>
           <p>{tweet.message}</p>
           <div className="icons">

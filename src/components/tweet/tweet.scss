@@ -1,6 +1,11 @@
 .tweet {
   border-top: solid 0.5px #e6e6e6;
+  padding: 10px;
 
+  a{
+    text-decoration: none;
+    color: #0F1419;
+  }
   h2 {
     font-size: 1rem;
   }
