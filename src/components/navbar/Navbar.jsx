@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { auth } from '../../utils/firebase.config';
-import './navbars.scss';
+import './navbar.scss';
 import { ImTwitter } from "react-icons/im";
 import { RiHome7Fill } from "react-icons/ri";
 import { FaHashtag, FaRegEnvelope } from "react-icons/fa";

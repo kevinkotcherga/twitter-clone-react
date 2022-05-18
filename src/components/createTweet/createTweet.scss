@@ -1,0 +1,18 @@
+.createTweet {
+  padding: 20px;
+  textarea {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+  }
+  input {
+    border: none;
+    background-color: #1F9EF7;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+}

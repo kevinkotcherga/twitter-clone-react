@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from '../../utils/firebase.config';
 import { addTweet, getTweets } from '../../features/tweet.slice';
+import './createTweet.scss'
 
 const CreateTweet = ({ uid, displayName }) => {
   const message = useRef();
@@ -40,9 +41,10 @@ const CreateTweet = ({ uid, displayName }) => {
 
   return (
     <div className='createTweet'>
+      <p>Accueil</p>
         <form onSubmit={(e) => handleTweet(e)}>
-          <textarea placeholder='Message...' ref={message}></textarea>
-          <input type="submit" />
+          <textarea placeholder='Quoi de neuf ?' ref={message}></textarea>
+          <input type="submit" value='Tweeter'/>
         </form>
     </div>
   );
