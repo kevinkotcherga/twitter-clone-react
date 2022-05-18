@@ -1,7 +1,7 @@
 .navbar {
   .container {
     margin: auto;
-    width: 100px;
+    width: 200px;
     a {
         text-decoration: none;
       }
@@ -10,18 +10,27 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
+
         li {
           cursor: pointer;
           color: #0F1419;
           margin: 20px 0;
+          font-size: 1.3rem;
+          font-weight: 600;
+          height: 50px;
+          border-radius: 20px;
+          span{
+            margin-right: 20px;
+          }
         }
         li:hover {
           background-color: #E7E7E8;
-          border-radius: 10px;
+          transition-duration: 0.3s;
         }
       }
       .buttonTweeter {
         background-color: #1F9EF7;
+        width: 100%;
         color: #ffffff;
         border-radius: 15px;
         border: none;
