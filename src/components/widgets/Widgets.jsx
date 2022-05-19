@@ -2,6 +2,7 @@ import React from 'react';
 import './widgets.scss';
 import { BsSearch } from "react-icons/bs";
 import Trend from '../trend/Trend';
+import { trends } from '../../data';
 
 const Widgets = () => {
   return (
@@ -12,16 +13,9 @@ const Widgets = () => {
       </div>
       <div className='trendContainer'>
         <p className='trendTitle'>Tendances pour vous</p>
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
+        {trends.map((trend) => (
+          <Trend key={trend.id} categories={trend.categories} hashtag={trend.hashtag} tweets={trend.tweets} />
+        ))}
       </div>
     </div>
   );
