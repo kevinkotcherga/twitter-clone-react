@@ -16,6 +16,7 @@ const Widgets = () => {
         {trends.map((trend) => (
           <Trend key={trend.id} categories={trend.categories} hashtag={trend.hashtag} tweets={trend.tweets} />
         ))}
+        <p className='buttonSeeMore'>Voir plus</p>
       </div>
     </div>
   );
