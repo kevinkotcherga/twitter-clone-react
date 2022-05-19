@@ -1,6 +1,7 @@
 import React from 'react';
 import './widgets.scss';
 import { BsSearch } from "react-icons/bs";
+import Trend from '../trend/Trend';
 
 const Widgets = () => {
   return (
@@ -10,7 +11,17 @@ const Widgets = () => {
         <input type="text" placeholder='Recherche Twitter'/>
       </div>
       <div className='trendContainer'>
-        <span className='trendTitle'>Tendances pour vous</span>
+        <p className='trendTitle'>Tendances pour vous</p>
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
+        <Trend />
       </div>
     </div>
   );

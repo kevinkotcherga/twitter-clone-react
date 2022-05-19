@@ -1,0 +1,29 @@
+.trend {
+  height: 80px;
+  position: relative;
+  padding: 0px 20px;
+  width: 90%;
+
+  .container {
+    position: absolute;
+    top: 50%;
+    /* poussé de la moitié de hauteur du référent */
+    transform: translateY(-50%);
+    /* tiré de la moitié de sa propre hauteur */
+    .categorie {
+      font-size: 0.8rem;
+    }
+    .hashtag {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .numberOfTweets {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.trend:hover {
+  background-color: #F7F9F9;
+  cursor: pointer;
+}
