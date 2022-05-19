@@ -9,7 +9,7 @@ import { MdOutlineNotificationsNone } from "react-icons/md";
 import { AiOutlineInbox } from "react-icons/ai";
 import { BsCardList } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { FiSettings } from "react-icons/fi";
+import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ user }) => {
@@ -64,7 +64,7 @@ const Navbar = ({ user }) => {
             </Link>
             <li>
               <span>
-                <FiSettings className='logo'/>
+                <HiOutlineDotsCircleHorizontal className='logo'/>
                 <p>Plus</p>
               </span>
             </li>

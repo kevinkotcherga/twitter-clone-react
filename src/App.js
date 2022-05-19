@@ -14,6 +14,7 @@ import Profil from './pages/profil/Profil';
 
 function App() {
 	const [user, setUser] = useState(null);
+  console.log(user);
 	// useDispatch déclenche l'action, la logique du reducer
 	const dispatch = useDispatch();
 	// useSelector permet de récupérer la data qui est dans la store, envoyé depuis le dipatch
