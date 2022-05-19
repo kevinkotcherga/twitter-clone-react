@@ -7,6 +7,7 @@ const SignUp = () => {
   const registerEmail = useRef();
   const registerPassword = useRef();
   const [displayName, setDisplayName] = useState('');
+  const [photoURL, setPhotoURL] = useState("");
 
   // handleRegister est la fonction qui s'envoie quand submit est cliqué
   const handleRegister = (e) => {
@@ -21,6 +22,9 @@ const SignUp = () => {
         // userAuth sont les valeurs email et password récupérés à qui sont ajoutés displayName
         await userAuth.user.updateProfile({
           displayName
+        });
+        await userAuth.user.updateProfile({
+          photoURL
         });
         // window.location.reload rafraichit la page pour afficher la div de message
         window.location.reload();
@@ -37,6 +41,7 @@ const SignUp = () => {
     <div className='signUp'>
       <form className="formSignUp" onSubmit={e => handleRegister(e)} >
         <input type="text" placeholder='Pseudo' required onChange={(e) => setDisplayName(e.target.value)} />
+        <input type="text" placeholder='Photo url' onChange={(e) => setPhotoURL(e.target.value)} />
         <input type="email" placeholder='Email' required ref={registerEmail} />
         <input type="password" placeholder='Mot de passe' required ref={registerPassword} />
         <input type="submit" value="S'inscrire"/>

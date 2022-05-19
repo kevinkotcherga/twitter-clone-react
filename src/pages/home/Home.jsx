@@ -18,7 +18,7 @@ const Home = ({ user, tweets }) => {
       </div>
       <div className="center">
         <div className="centerContainer">
-          <CreateTweet uid={user.uid} displayName={user.displayName} />
+          <CreateTweet uid={user.uid} displayName={user.displayName} photoURL={user.photoURL} />
           <Tweets user={user} tweets={tweets} />
         </div>
       </div>

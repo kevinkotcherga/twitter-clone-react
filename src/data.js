@@ -60,3 +60,24 @@ export const trends = [
 		tweets: 1256,
 	},
 ];
+
+export const suggestions = [
+	{
+		id: 1,
+		img: 'https://pbs.twimg.com/profile_images/1404040292622348294/aWWZFJuH_400x400.jpg',
+		name: 'Ubisoft',
+		surname: 'ubisoft',
+	},
+	{
+		id: 2,
+		img: 'https://pbs.twimg.com/profile_images/1022127431447195649/ASyO_yY3_400x400.jpg',
+		name: 'Equipe de France ⭐⭐',
+		surname: 'equipedefrance',
+	},
+	{
+		id: 3,
+		img: 'https://pbs.twimg.com/profile_images/1503316824540254212/X4i4Zeml_400x400.png',
+		name: 'AlloCiné',
+		surname: 'allocine',
+	},
+];

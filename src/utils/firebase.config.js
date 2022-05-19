@@ -2,6 +2,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { getFirestore } from '@firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const app = firebase.initializeApp({
@@ -17,4 +18,5 @@ const app = firebase.initializeApp({
 export const auth = app.auth();
 // Dans la database firebase modifier la ligne (allow read, write: if false;) en (allow read, write: if true;)
 export const db = getFirestore();
+export const storage = getStorage(app);
 export default app;

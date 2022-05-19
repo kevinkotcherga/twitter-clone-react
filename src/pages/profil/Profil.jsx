@@ -1,9 +1,7 @@
-import { signOut } from 'firebase/auth';
-import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { auth } from '../../utils/firebase.config';
+import { signOut } from 'firebase/auth';
 
-const Profil = () => {
+const Profil= () => {
   // handleLogout est appelé au clique du button
 	const handleLogout = async () => {
 	// SignOut est une méthode de firebase qui permet la déconnexion
@@ -12,11 +10,10 @@ const Profil = () => {
 	};
 
   return (
-    <div>
-      <h1>Profil</h1>
+    <div className="App">
       <button onClick={() => handleLogout()}>Deconnexion</button>
     </div>
   );
-};
+}
 
 export default Profil;

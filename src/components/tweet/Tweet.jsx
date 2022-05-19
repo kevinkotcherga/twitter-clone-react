@@ -9,7 +9,7 @@ const Tweet = ({ tweet, user}) => {
   return (
     <div className='tweet'>
       <div className='pictureContainer'>
-        <img src="https://thispersondoesnotexist.com/image" alt="" />
+        <img src={tweet.picture} alt="" />
       </div>
       <div className='tweetContainer'>
       <Link to={`/users/${tweet.authorId}`} state={{tweet: tweet}}>
@@ -19,10 +19,13 @@ const Tweet = ({ tweet, user}) => {
         </Link>
         <p>{tweet.message}</p>
         <div className="icons">
-          <Link to={`/tweets/${tweet.id}`} state={{tweet: tweet}}><FaRegComment style={{ marginRight:'5px'}}/>{tweet.comments ? (tweet.comments.length) : "0"}</Link>
-          <Link to={`/tweets/${tweet.id}`}><AiOutlineRetweet style={{ cursor:'pointer', marginRight:'5px'}} />2</Link>
-          <Link to={`/tweets/${tweet.id}`}><AiOutlineHeart style={{ cursor:'pointer', marginRight:'5px'}}/>3</Link>
-          <Link to={`/tweets/${tweet.id}`}><IoShareOutline style={{ cursor:'pointer', marginRight:'5px'}}/>1</Link>
+          <Link to={`/tweets/${tweet.id}`} state={{tweet: tweet}}><FaRegComment style={{ marginRight:'5px'}}/>
+            {/* {tweet.comments ? (tweet.comments.length) : "0"} */}
+            {tweet.comments}
+          </Link>
+          <Link to={`/tweets/${tweet.id}`}><AiOutlineRetweet style={{ cursor:'pointer', marginRight:'5px'}} />{tweet.retweet}</Link>
+          <Link to={`/tweets/${tweet.id}`}><AiOutlineHeart style={{ cursor:'pointer', marginRight:'5px'}}/>{tweet.like}</Link>
+          <Link to={`/tweets/${tweet.id}`}><IoShareOutline style={{ cursor:'pointer', marginRight:'5px'}}/></Link>
         </div>
       </div>
     </div>

@@ -5,10 +5,14 @@ import { db } from '../../utils/firebase.config';
 import { addTweet, getTweets } from '../../features/tweet.slice';
 import './createTweet.scss'
 
-const CreateTweet = ({ uid, displayName }) => {
+const CreateTweet = ({ uid, displayName, photoURL }) => {
   const message = useRef();
   // useDispatch déclenche l'action, la logique du reducer
   const dispatch = useDispatch();
+
+  function randomIntFromInterval(min, max) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 
   const handleTweet = async (e) => {
     e.preventDefault();
@@ -16,9 +20,13 @@ const CreateTweet = ({ uid, displayName }) => {
     // data récupère les informations pour les envoyers à la db
     const data = {
       author: displayName,
+      picture: photoURL,
+      like: randomIntFromInterval(1, 50),
+      retweet: randomIntFromInterval(1, 50),
       authorId: uid,
       message: message.current.value,
-      comments: null,
+      // comments: null,
+      comments: randomIntFromInterval(1, 10),
       date: Date.now()
     }
     // CREATE
@@ -45,7 +53,7 @@ const CreateTweet = ({ uid, displayName }) => {
         <div className='containerForm'>
           <form onSubmit={(e) => handleTweet(e)}>
             <div className='containerText'>
-              <img src="https://thispersondoesnotexist.com/image" alt="" />
+              <img src={photoURL} alt="" />
               <textarea placeholder='Quoi de neuf ?' ref={message}></textarea>
             </div>
             <input type="submit" value='Tweeter'/>

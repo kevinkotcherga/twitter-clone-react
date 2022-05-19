@@ -1,0 +1,42 @@
+.suggestion {
+  .suggestionContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    .containerLeft {
+      display: flex;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.suggestionName {
+  margin-left: 15px;
+  .name {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .username {
+    color: #5C6C78;
+  }
+}
+
+.suggestion:hover {
+  background-color: #F7F9F9;
+  cursor: pointer;
+}
+
+.buttonFollow {
+  background-color: #0F1419;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}

@@ -7,7 +7,7 @@ const ProfilContainer = ({ user }) => {
     <div className='profilContainer'>
       <div className='container'>
         <div className='pictureName'>
-          <img src="https://thispersondoesnotexist.com/image" alt="" />
+          <img src={user.photoURL} alt="" />
           <p>@{user.displayName}</p>
         </div>
         <BiDotsHorizontalRounded />
